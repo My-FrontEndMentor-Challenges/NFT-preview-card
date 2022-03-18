@@ -28,10 +28,37 @@ body {
   box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.3);
   z-index: 2;
 }
-.nft-card-img {
+.image-container {
   width: 88%;
-  margin: 1.5rem 0 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin: 1.1rem 0 0 0;
+  cursor: pointer;
+}
+.image-container::before {
+  content: "";
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background: hsl(178, 100%, 50%);
+  opacity: 0.4;
   border-radius: 10px;
+  display: none;
+}
+.image-container::after {
+  content: url("./images/icon-view.svg");
+  position: absolute;
+  display: none;
+}
+.nft-card-img {
+  width: 100%;
+  border-radius: 10px;
+}
+.image-container:hover::before,
+.image-container:hover::after {
+  display: flex;
 }
 .nft-card-text {
   width: 88%;
@@ -42,6 +69,10 @@ body {
   color: hsl(0, 0%, 100%);
   margin-bottom: 1rem;
   font-weight: 600;
+}
+.nft-card-title:hover {
+  color: hsl(178, 100%, 50%);
+  cursor: pointer;
 }
 .nft-card-p {
   font-size: 1rem;
@@ -71,7 +102,7 @@ body {
   color: hsl(178, 100%, 50%);
   font-size: 0.9rem;
   font-weight: 600;
-  letter-spacing: 0.1px;
+  letter-spacing: 1px;
 }
 .price img {
   margin-right: 0.3rem;
@@ -103,4 +134,8 @@ body {
 }
 .creator span {
   color: hsl(0, 0%, 100%);
+}
+.creator span:hover {
+  color: hsl(178, 100%, 50%);
+  cursor: pointer;
 }
